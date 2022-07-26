@@ -1,6 +1,6 @@
 ![Le logo de Framasoft](https://framasoft.org/nav/img/logo.png "TP Démineur")
 
-#TP Démineur
+# TP Démineur
 
 [Default](#){.btn .btn-default}
 [Primary](#){.btn .btn-primary}
