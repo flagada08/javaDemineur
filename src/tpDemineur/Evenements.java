@@ -10,19 +10,7 @@ import java.awt.event.MouseListener;
  * @author User-05
  *
  */
-public class Demineur implements ActionListener, MouseListener {
-	
-	// Patron
-	int rows = 10;
-	int cols = 10;
-	int numMines = 10;
-	
-	public Demineur() {
-//		System.out.println("test");
-		FenetrePrincipale frame = new FenetrePrincipale("Démineur");
-		frame.setVisible(true);
-//		frame.setTitle("Super Démineur");
-}
+public class Evenements implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -59,5 +47,5 @@ public class Demineur implements ActionListener, MouseListener {
 		// TODO Auto-generated method stub
 		
 	}
-	 
+
 }

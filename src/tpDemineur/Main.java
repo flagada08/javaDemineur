@@ -16,7 +16,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 	try {
-		// Look and feel swing UIManager
+		// Méthode Look and feel de swing UIManager
 		 UIManager.setLookAndFeel(
 		 UIManager.getCrossPlatformLookAndFeelClassName());
 		 // Metal test
@@ -24,7 +24,7 @@ public class Main {
 		 }
 		 catch(Exception e) { }
 		// Objet Deminuer instancié
-		 new Demineur();
+		 new DemineurClassique();
 	}
 
 }
