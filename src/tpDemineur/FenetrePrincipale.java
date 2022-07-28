@@ -1,5 +1,7 @@
 package tpDemineur;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -45,11 +47,15 @@ public class FenetrePrincipale extends JFrame {
 		
 		// Création et capture du contenu JPanel méthode
 		JPanel zoneDemineur = (JPanel) this.getContentPane();
-		// Appel objet zoneDemineur qui contient la grille du jeu
+		// New objet zoneDemineur qui contient la grille du jeu
 		zoneDemineur.add(new ZoneDemineur());
-		// Appel objet StatusBar qui contient la bar de status
-		JPanel statusBar = (JPanel) this.getContentPane();
-		statusBar.add(new StatusBar());
+		/**
+		 * New objet StatusBar qui contient le composant bar de 
+		 * status + ajout d'une contrainte pour ne pas écraser le 
+		 * container de la zone d'affichage du démineur par 
+		 * supperposition du JPanel
+		 */
+		zoneDemineur.add(new StatusBar(), BorderLayout.SOUTH);
 	}
 
 	private void initControles() {

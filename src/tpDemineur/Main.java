@@ -23,8 +23,9 @@ public class Main {
 //		 JFrame.setDefaultLookAndFeelDecorated(true);
 		 }
 		 catch(Exception e) { }
-		// Objet Deminuer instancié
-		 new DemineurClassique();
+		// Objet de la fenetre principale instanciée
+		FenetrePrincipale frame = new FenetrePrincipale("Démineur Classique");
+		frame.setVisible(true);
 	}
 
 }

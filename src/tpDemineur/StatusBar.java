@@ -20,23 +20,24 @@ public class StatusBar extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * 
+	 * Méthode de la bar de status
 	 */
 	public StatusBar() {
+		// Objet AWT BroderLayout
+		this.setLayout(new BorderLayout());	
 		
-		this.setLayout(new BorderLayout());
-		this.setSize(100, 100);
-		
-		// Bar de status en bas de la fenêtre
+		// JPanel de la bar de status, au sud de la fenêtre
 		JPanel statusPanel = new JPanel();
+		// Propriétés status bar
 		statusPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
 		this.add(statusPanel, BorderLayout.SOUTH);
-		statusPanel.setPreferredSize(new Dimension(this.getWidth(), 16));
+		statusPanel.setPreferredSize(new Dimension(this.getWidth(), 25));
 		statusPanel.setLayout(new BoxLayout(statusPanel, BoxLayout.X_AXIS));
-		JLabel statusLabel = new JLabel("Status");
+		// JLabel de la bar de status, avec alignement horizontal
+		JLabel statusLabel = new JLabel("STATUS: " + " marked: 0");
 		statusLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		statusPanel.add(statusLabel);
-		
+		// Setter de visibilité au cas où
 		this.setVisible(true);
 	}
 }
