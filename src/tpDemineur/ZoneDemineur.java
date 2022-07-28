@@ -14,22 +14,63 @@ public class ZoneDemineur extends JPanel {
 	/**
 	 * serialVersionUID
 	 */
-	private static final long serialVersionUID = 1L;
-	
-//	JButton[][] buttons = new JButton[rows][cols];
-	
-	public static final int rows = 10;
-	public static final int cols = 10;
-	public static int numMines = 10;
+	private static final long serialVersionUID = 1L;	
 	/**
 	 * Déclaration des variables lignes, colones, etc.
 	 */
+	private final int lignes = 10;
+	private final int colones = 10;
 	
+	public static int nombreMines;
+	
+	int curentLigne = 0;
+    int curentColone = 0;
+	
+	private double random;
+	
+	private boolean boolMine = false;
+	
+	public static JButton Mines[][];
+	/**
+	 * 
+	 */
 	public ZoneDemineur() {
-		// Remplissage de la grille awt avec JButton de swing
-		this.setLayout(new GridLayout(rows, cols));
-		for (int i = 0; i < (rows*cols); i++) {
-			this.add(new JButton());
+		// Création de la grille awt avec remplissage JButton swing
+		setLayout(new GridLayout(lignes, colones));
+		Mines = new JButton[lignes][colones];
+		for (int row = 0; row < lignes; row++) {
+			curentLigne++;
+			for (int col = 0; col < colones; col++) {
+				Mines[row][col] = new JButton();
+				
+				ZoneMines(Mines[row][col]);
+				
+				Mines[row][col].addMouseListener(new MouseHandler(row, col));
+				
+				add(Mines[row][col]);
+				
+				curentColone++;
+			}
 		}
 	}
+	/**
+	 * 
+	 * @param button
+	 * @return
+	 */
+    public boolean ZoneMines(JButton button)
+    {
+        random = Math.random()*100;
+        if(random >= 80)
+        {
+            boolMine = true;
+            nombreMines++;
+        }
+        else
+        {
+            boolMine = false;
+        }
+        return boolMine;
+    }
+
 }

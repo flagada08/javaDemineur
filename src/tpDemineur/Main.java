@@ -10,8 +10,10 @@ import javax.swing.UIManager;
  */
 public class Main {
 	/**
-	 * Méthode statique main, point d'entrée de l'application qui 
-	 * définit le "look and feel"
+	 * Classe principale main, point d'entrée de l'application qui 
+	 * contient la méthode static main qui définit la méthode de 
+	 * "look and feel" qui force l'utilisation du thread (tuyau) 
+	 * courant
 	 * @param args
 	 */
 	public static void main(String[] args) {

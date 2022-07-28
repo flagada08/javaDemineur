@@ -33,20 +33,20 @@ public class FenetrePrincipale extends JFrame {
 		 * Méthode swing pour quitter le programme lorsque la fenêtre
 		 * application est fermée
 		 */
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		 /**
 		  * Appel de la méthode initControles(); qui définit 
 		  * l'état initial de la fenêtre
 		  */
 		 initControles();
 		 
-		this.setTitle("Mon Super Démineur");
-		this.setSize(600, 600);
-		this.setLocationRelativeTo(null);
-		this.setResizable(false);
+		setTitle("Mon Super Démineur");
+		setSize(600, 600);
+		setLocationRelativeTo(null);
+		setResizable(false);
 		
 		// Création et capture du contenu JPanel méthode
-		JPanel zoneDemineur = (JPanel) this.getContentPane();
+		JPanel zoneDemineur = (JPanel) getContentPane();
 		// New objet zoneDemineur qui contient la grille du jeu
 		zoneDemineur.add(new ZoneDemineur());
 		/**
@@ -65,7 +65,6 @@ public class FenetrePrincipale extends JFrame {
 		menu.add(nouvelleGameButton);
 		menu.add(exitGameButton);
 		
-		this.setJMenuBar(menuBar);
+		setJMenuBar(menuBar);
 	}
-// TODO Gestion des événements
 }
