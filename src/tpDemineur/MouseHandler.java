@@ -19,15 +19,13 @@ public class MouseHandler extends MouseAdapter {
 	}
 	// déclenchement d'un évenement au click
 	public void mouseClicked(MouseEvent e) {
-		// TODO 
-		// test si bouton gauche (1) marquer 1
+		// si event sur le bouton 1 passer la méthode setVisible à false
 		if(e.getButton() == 1) {
-			ZoneDemineur.Mines[ligne][colone].setText("1");
+			ZoneDemineur.Cases[ligne][colone].setVisible(false);
         }
-		// TODO 
-		// test sinon si bouton droit (3) marquer 3
+		// sinon si event sur le bouton 3 marquer le JButton
         else if(e.getButton() == 3) {
-        	ZoneDemineur.Mines[ligne][colone].setText("3");
+        	ZoneDemineur.Cases[ligne][colone].setText("X");
         }
 	}
 	/**
@@ -35,7 +33,14 @@ public class MouseHandler extends MouseAdapter {
 	 * @author User-05
 	 *
 	 */
-	static class exitApp implements ActionListener {
+	static class newGame implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO
+		}
+	}
+	static class exitGame implements ActionListener {
 		/**
 		 * 
 		 */

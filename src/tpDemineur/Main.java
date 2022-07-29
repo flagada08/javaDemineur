@@ -26,7 +26,7 @@ public class Main {
 		 }
 		 catch(Exception e) { }
 		// Objet de la fenetre principale instanciée
-		FenetrePrincipale frame = new FenetrePrincipale("Démineur Classique");
+		FenetrePrincipale frame = new FenetrePrincipale();
 		frame.setVisible(true);
 	}
 

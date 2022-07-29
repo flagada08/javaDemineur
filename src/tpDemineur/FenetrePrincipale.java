@@ -26,22 +26,22 @@ public class FenetrePrincipale extends JFrame {
 	JMenuItem nouvelleGameMenu = new JMenuItem("Nouvelle game");	
 	ImageIcon exitIcon = new ImageIcon("src/ressources/exit.png");
 	Image tempExitIcon = exitIcon.getImage();
-	Image exitIconResized = tempExitIcon.getScaledInstance(15, 15,  java.awt.Image.SCALE_SMOOTH);	
+	Image exitIconResized = tempExitIcon.getScaledInstance(15, 15,  java.awt.Image.SCALE_SMOOTH);
 	/**
 	 * 
 	 * @param string
 	 */
-	public FenetrePrincipale(String string) {
+	public FenetrePrincipale() {
 		/**
 		 * Méthode swing pour quitter le programme lorsque la fenêtre
 		 * d'application est fermée
 		 */
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		 /**
-		  * Appel de la méthode initControles(); qui définit 
+		  * Appel de la méthode menuControles(); qui définit 
 		  * l'état initial de la fenêtre
 		  */
-		initControles();
+		menuControles();
 		// propriétés de la fenêtre
 		setTitle("Mon Super Démineur");
 		setSize(600, 600);
@@ -63,12 +63,13 @@ public class FenetrePrincipale extends JFrame {
 	/**
 	 * 
 	 */
-	private void initControles() {
+	private void menuControles() {
 		// TODO Définition de l'état initial des contrôles
 		exitIcon = new ImageIcon(exitIconResized);
 		JMenuItem exitGameMenu = new JMenuItem("Quitter le game", exitIcon);
 		// Handler ajouté au JMenuItem exit
-		exitGameMenu.addActionListener(new MouseHandler.exitApp());
+		exitGameMenu.addActionListener(new MouseHandler.exitGame());
+		nouvelleGameMenu.addActionListener(new MouseHandler.newGame());
 		// TODO Positionnement des controles
 		menuBar.add(fichierGameMenu);
 		fichierGameMenu.add(nouvelleGameMenu);

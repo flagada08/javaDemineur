@@ -35,8 +35,12 @@ public class StatusBar extends JPanel {
 		statusPanel.setPreferredSize(new Dimension(getWidth(), 25));
 		// modification du composant pour le position sur un axe horizontal
 		statusPanel.setLayout(new BoxLayout(statusPanel, BoxLayout.X_AXIS));
-		// déclarer un JLabel afin d'assigner un string à la bar de status
-		JLabel statusLabel = new JLabel("STATUS: " + " marked: 0");
+		/**
+		 * déclarer un JLabel afin d'assigner un string à la bar de status 
+		 * + ajout de la variable défini dans ZoneDemineur pour afficher le 
+		 * nombre de mines générées aléatoirement
+		 */
+		JLabel statusLabel = new JLabel("STATUS: " + ZoneDemineur.nombreMines + " marked: ");
 		// implémentation du label précédemment déclaré, dans notre composant JPanel
 		statusPanel.add(statusLabel);
 		// Setter swing de visibilité au cas où
