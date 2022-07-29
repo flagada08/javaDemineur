@@ -37,13 +37,17 @@ public class ZoneDemineur extends JPanel {
 	public ZoneDemineur() {
 		// Création de la grille awt avec remplissage JButton swing
 		setLayout(new GridLayout(lignes, colones));
+		/**
+		 * assigner les valeurs précédemment déclarées à notre 
+		 * tableau en 2D
+		 */
 		Mines = new JButton[lignes][colones];
 		for (int row = 0; row < lignes; row++) {
 			curentLigne++;
 			for (int col = 0; col < colones; col++) {
 				Mines[row][col] = new JButton();
 				
-				ZoneMines(Mines[row][col]);
+				RandomMines(Mines[row][col]);
 				
 				Mines[row][col].addMouseListener(new MouseHandler(row, col));
 				
@@ -58,7 +62,7 @@ public class ZoneDemineur extends JPanel {
 	 * @param button
 	 * @return
 	 */
-    public boolean ZoneMines(JButton button)
+    public boolean RandomMines(JButton button)
     {
         random = Math.random()*100;
         if(random >= 80)

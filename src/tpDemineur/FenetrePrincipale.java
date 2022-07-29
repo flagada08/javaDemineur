@@ -1,7 +1,9 @@
 package tpDemineur;
 
 import java.awt.BorderLayout;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -20,10 +22,11 @@ public class FenetrePrincipale extends JFrame {
 	private static final long serialVersionUID = 1L;
 // TODO Champs privés: Réferences d'objets contrôles, menus, …
 	JMenuBar menuBar = new JMenuBar();
-	JMenu menu = new JMenu("Fichier");
-	JMenuItem nouvelleGameButton = new JMenuItem("Nouvelle game");
-	JMenuItem exitGameButton = new JMenuItem("Quitter le game");
-	
+	JMenu fichierGameMenu = new JMenu("Fichier");
+	JMenuItem nouvelleGameMenu = new JMenuItem("Nouvelle game");	
+	ImageIcon exitIcon = new ImageIcon("src/ressources/exit.png");
+	Image tempExitIcon = exitIcon.getImage();
+	Image exitIconResized = tempExitIcon.getScaledInstance(15, 15,  java.awt.Image.SCALE_SMOOTH);	
 	/**
 	 * 
 	 * @param string
@@ -31,15 +34,15 @@ public class FenetrePrincipale extends JFrame {
 	public FenetrePrincipale(String string) {
 		/**
 		 * Méthode swing pour quitter le programme lorsque la fenêtre
-		 * application est fermée
+		 * d'application est fermée
 		 */
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		 /**
 		  * Appel de la méthode initControles(); qui définit 
 		  * l'état initial de la fenêtre
 		  */
-		 initControles();
-		 
+		initControles();
+		// propriétés de la fenêtre
 		setTitle("Mon Super Démineur");
 		setSize(600, 600);
 		setLocationRelativeTo(null);
@@ -57,14 +60,20 @@ public class FenetrePrincipale extends JFrame {
 		 */
 		zoneDemineur.add(new StatusBar(), BorderLayout.SOUTH);
 	}
-
+	/**
+	 * 
+	 */
 	private void initControles() {
 		// TODO Définition de l'état initial des contrôles
+		exitIcon = new ImageIcon(exitIconResized);
+		JMenuItem exitGameMenu = new JMenuItem("Quitter le game", exitIcon);
+		// Handler ajouté au JMenuItem exit
+		exitGameMenu.addActionListener(new MouseHandler.exitApp());
 		// TODO Positionnement des controles
-		menuBar.add(menu);
-		menu.add(nouvelleGameButton);
-		menu.add(exitGameButton);
-		
+		menuBar.add(fichierGameMenu);
+		fichierGameMenu.add(nouvelleGameMenu);
+		fichierGameMenu.add(exitGameMenu);
+		// affichage de la barre de menu
 		setJMenuBar(menuBar);
 	}
 }

@@ -1,5 +1,7 @@
 package tpDemineur;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -17,13 +19,29 @@ public class MouseHandler extends MouseAdapter {
 	}
 	// déclenchement d'un évenement au click
 	public void mouseClicked(MouseEvent e) {
-		// si bouton gauche (1) marquer 1
+		// TODO 
+		// test si bouton gauche (1) marquer 1
 		if(e.getButton() == 1) {
 			ZoneDemineur.Mines[ligne][colone].setText("1");
         }
-		// sinon si bouton droit (3) marquer 3
+		// TODO 
+		// test sinon si bouton droit (3) marquer 3
         else if(e.getButton() == 3) {
         	ZoneDemineur.Mines[ligne][colone].setText("3");
         }
 	}
+	/**
+	 * 
+	 * @author User-05
+	 *
+	 */
+	static class exitApp implements ActionListener {
+		/**
+		 * 
+		 */
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0);
+        }
+    }
+	
 }

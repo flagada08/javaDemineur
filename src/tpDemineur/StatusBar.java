@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 
 /**
@@ -26,16 +25,19 @@ public class StatusBar extends JPanel {
 		// Objet AWT BroderLayout
 		setLayout(new BorderLayout());	
 		
-		// JPanel de la bar de status, au sud de la fenêtre
+		// déclarer un composant JPanel de la bar de status, au sud de la fenêtre
 		JPanel statusPanel = new JPanel();
-		// Propriétés status bar
+		// Border du composant status bar
 		statusPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
+		// add ajoute un composant spécifique au container
 		add(statusPanel, BorderLayout.SOUTH);
+		// taille du composant
 		statusPanel.setPreferredSize(new Dimension(getWidth(), 25));
+		// modification du composant pour le position sur un axe horizontal
 		statusPanel.setLayout(new BoxLayout(statusPanel, BoxLayout.X_AXIS));
-		// JLabel de la bar de status, avec alignement horizontal
+		// déclarer un JLabel afin d'assigner un string à la bar de status
 		JLabel statusLabel = new JLabel("STATUS: " + " marked: 0");
-		statusLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		// implémentation du label précédemment déclaré, dans notre composant JPanel
 		statusPanel.add(statusLabel);
 		// Setter swing de visibilité au cas où
 		setVisible(true);
