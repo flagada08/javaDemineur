@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 public class MouseHandler extends MouseAdapter {	
 	
 	public int ligne, colone;
+	public static int count = 0;
 	
 	public MouseHandler(int ligne, int colone) {
 		this.ligne = ligne;
@@ -25,7 +26,9 @@ public class MouseHandler extends MouseAdapter {
         }
 		// sinon si event sur le bouton 3 marquer le JButton
         else if(e.getButton() == 3) {
+        	count++;
         	ZoneDemineur.Cases[ligne][colone].setText("X");
+        	
         }
 	}
 	/**
