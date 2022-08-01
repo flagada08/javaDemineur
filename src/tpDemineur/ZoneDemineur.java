@@ -21,12 +21,6 @@ public class ZoneDemineur extends JPanel {
 	private final int lignes = 10;
 	private final int colones = 10;
 	
-	public static int nombreMines;
-		
-	private double random;
-	
-	private boolean boolMine = false;
-	
 	public static JButton Cases[][];
 	/**
 	 * 
@@ -45,7 +39,7 @@ public class ZoneDemineur extends JPanel {
 				// Remplissage des lignes*colones par des JButton
 				Cases[row][col] = new JButton();
 				// Ajout de mines dans notre tableau en 2D (voir méthode RandomMines)
-				RandomMines(Cases[row][col]);
+				new RandomMines(Cases[row][col], false);
 				// Ajout du listener sur la grille de JButton
 				Cases[row][col].addMouseListener(new MouseHandler(row, col));
 				// Ajout du tableau sur la grille
@@ -54,24 +48,5 @@ public class ZoneDemineur extends JPanel {
 			}
 		}
 	}
-	/**
-	 * 
-	 * @param button
-	 * @return
-	 */
-    public boolean RandomMines(JButton button)
-    {
-        random = Math.random()*100;
-        if(random >= 80)
-        {
-            boolMine = true;
-            nombreMines++;
-        }
-        else
-        {
-            boolMine = false;
-        }
-        return boolMine;
-    }
 
 }
