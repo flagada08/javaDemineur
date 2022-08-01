@@ -22,7 +22,7 @@ public class MouseHandler extends MouseAdapter {
 	public void mouseClicked(MouseEvent e) {
 		// si event sur le bouton 1 passer la méthode setVisible à false
 		if(e.getButton() == 1) {
-			ZoneDemineur.Cases[ligne][colone].setVisible(false);
+			ZoneDemineur.Cases[ligne][colone].setEnabled(false);
         }
 		// sinon si event sur le bouton 3 marquer le JButton et compter le marquage
         else if(e.getButton() == 3) {
@@ -44,7 +44,9 @@ public class MouseHandler extends MouseAdapter {
 		 * 
 		 */
 		public void actionPerformed(ActionEvent e) {
-			// TODO
+//			if (e.getSource() == FenetrePrincipale.nouvelleGameMenu) {
+//				new ZoneDemineur();
+//	        }
 		}
 	}
 	static class exitGame implements ActionListener {

@@ -26,6 +26,7 @@ public class FenetrePrincipale extends JFrame {
 	ImageIcon exitIcon = new ImageIcon(getClass() .getResource("/exit.png"));
 	Image tempExitIcon = exitIcon.getImage();
 	Image exitIconResized = tempExitIcon.getScaledInstance(15, 15,  java.awt.Image.SCALE_SMOOTH);
+	static JMenuItem nouvelleGameMenu = new JMenuItem("Nouvelle game");
 	/**
 	 * 
 	 * @param string
@@ -65,7 +66,6 @@ public class FenetrePrincipale extends JFrame {
 	private void menuControles() {
 		// TODO Définition de l'état initial des contrôles
 		exitIcon = new ImageIcon(exitIconResized);
-		JMenuItem nouvelleGameMenu = new JMenuItem("Nouvelle game");	
 		JMenuItem exitGameMenu = new JMenuItem("Quitter le game", exitIcon);
 		// Handler ajouté au JMenuItem exit
 		exitGameMenu.addActionListener(new MouseHandler.exitGame());

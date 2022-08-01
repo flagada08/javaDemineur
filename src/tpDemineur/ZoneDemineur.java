@@ -33,8 +33,7 @@ public class ZoneDemineur extends JPanel {
 		 * tableau en 2D
 		 */
 		Cases = new JButton[lignes][colones];
-		for (int row = 0; row < lignes; row++) {
-			
+		for (int row = 0; row < lignes; row++) {			
 			for (int col = 0; col < colones; col++) {
 				// Remplissage des lignes*colones par des JButton
 				Cases[row][col] = new JButton();
@@ -43,8 +42,7 @@ public class ZoneDemineur extends JPanel {
 				// Ajout du listener sur la grille de JButton
 				Cases[row][col].addMouseListener(new MouseHandler(row, col));
 				// Ajout du tableau sur la grille
-				this.add(Cases[row][col]);
-				
+				this.add(Cases[row][col]);				
 			}
 		}
 	}

@@ -13,13 +13,10 @@ public class RandomMines {
 	 */
     public RandomMines(JButton button, boolean boolMine) {
         random = Math.random()*100;
-        if(random >= 80)
-        {
+        if(random >= 80) {
             boolMine = true;
             nombreMines++;
-        }
-        else
-        {
+        } else {
             boolMine = false;
         }
     }
