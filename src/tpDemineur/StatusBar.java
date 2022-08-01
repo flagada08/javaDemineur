@@ -25,7 +25,7 @@ public class StatusBar extends JPanel {
 	 * + ajout de la variable défini dans ZoneDemineur pour afficher le 
 	 * nombre de mines générées aléatoirement
 	 */
-	JLabel statusLabel = new JLabel("Mines: " + RandomMines.nombreMines + " X: 0 ");
+	JLabel statusLabel = new JLabel(" Mines: " + RandomMines.nombreMines + " X: " + MouseHandler.countMarques);
 	/**
 	 * Méthode de la bar de status
 	 */

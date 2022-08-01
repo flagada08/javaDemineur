@@ -11,8 +11,8 @@ import java.awt.event.MouseEvent;
  */
 public class MouseHandler extends MouseAdapter {	
 	
+	public static int countMarques = 0;
 	public int ligne, colone;
-	int countMarques = 0;
 	
 	public MouseHandler(int ligne, int colone) {
 		this.ligne = ligne;
@@ -24,10 +24,14 @@ public class MouseHandler extends MouseAdapter {
 		if(e.getButton() == 1) {
 			ZoneDemineur.Cases[ligne][colone].setVisible(false);
         }
-		// sinon si event sur le bouton 3 marquer le JButton
+		// sinon si event sur le bouton 3 marquer le JButton et compter le marquage
         else if(e.getButton() == 3) {
         	ZoneDemineur.Cases[ligne][colone].setText("X");
-        	countMarques++;
+        	
+        	if(ZoneDemineur.Cases[ligne][colone].getText().equals("X")) {
+        		countMarques = countMarques+1;
+        		System.out.println(countMarques);
+        	}
         }
 	}
 	/**

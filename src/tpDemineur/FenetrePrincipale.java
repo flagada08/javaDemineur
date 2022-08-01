@@ -23,7 +23,7 @@ public class FenetrePrincipale extends JFrame {
 // TODO Champs privés: Réferences d'objets contrôles, menus, …
 	JMenuBar menuBar = new JMenuBar();
 	JMenu fichierGameMenu = new JMenu("Fichier");
-	ImageIcon exitIcon = new ImageIcon("src/ressources/exit.png");
+	ImageIcon exitIcon = new ImageIcon(getClass() .getResource("/exit.png"));
 	Image tempExitIcon = exitIcon.getImage();
 	Image exitIconResized = tempExitIcon.getScaledInstance(15, 15,  java.awt.Image.SCALE_SMOOTH);
 	/**
