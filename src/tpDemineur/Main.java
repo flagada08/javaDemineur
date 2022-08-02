@@ -17,6 +17,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+	// Try catch en cas d'erreur au chargement de l'application
 	try {
 		// Méthode Look and feel de swing UIManager
 		 UIManager.setLookAndFeel(
