@@ -18,4 +18,8 @@
 
 ### **1.2 Classe FenetrePrincipale**
 * Classe générique, qui regroupe l'ensemble des propriétés de la fenêtre principale de l'application
-* Utilisation de swing et awt pour construire le visuel de la fenêtre son menu et sa bar de statut
+* Utilisation de swing et awt pour construire le visuel de la fenêtre, son menu et sa barre de statut
+
+### **1.3 ZoneDemineur**
+* Classe "canvas" qui génère une grille grâce à awt et swing qui génère des bouttons dans cette dernière
+* Implémentation de la classe RandomMines dans la grille précédemment générée afin de remplir alétoirement la grille de boutons avec une valeur booléenne correspondant à la présence des mines
